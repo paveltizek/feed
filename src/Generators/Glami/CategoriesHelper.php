@@ -39,7 +39,7 @@ class CategoriesHelper {
                 $_cat = isset($categoryFullNameElement[0]) ? (string)$categoryFullNameElement[0]->nodeValue : null;
                 
                 if($id && $_cat) {
-                    $_cat = str_replace('Glami.cz | ', '', $_cat);
+//                    $_cat = str_replace('Glami.cz | ', '', $_cat);
                     $categories[$id] = $_cat;
                 }
             }
