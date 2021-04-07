@@ -67,6 +67,9 @@ class Item extends BaseItem {
     /** @var string|null */
     protected $itemGroupId;
 
+    /** @var string|null */
+    protected $customLabel;
+
     /** @var array */
     protected $accessories = array();
 
@@ -471,4 +474,21 @@ class Item extends BaseItem {
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
+    public function getCustomLabel(): ?string {
+        return $this->customLabel;
+    }
+
+    /**
+     * @param string|null $customLabel
+     * @return Item
+     */
+    public function setCustomLabel( ?string $customLabel ): Item {
+        $this->customLabel = $customLabel;
+        return $this;
+    }
+
+    
 }

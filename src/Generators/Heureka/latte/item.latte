@@ -49,4 +49,6 @@
     {if !empty($gifts = $item->getGifts())}
         <GIFT n:foreach="$gifts as $gift">{$gift->getName()}</GIFT>
     {/if}
+
+    <CUSTOM_LABEL n:if="$item->getCustomLabel()">{$item->getCustomLabel()}</CUSTOM_LABEL>
 </SHOPITEM>
