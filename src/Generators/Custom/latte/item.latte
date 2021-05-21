@@ -1,6 +1,6 @@
 {contentType xml}
 <SHOPITEM>
-    <ITEM_ID n:if="$item->itemId !== null">{$item->getItemId()}</ITEM_ID>
+    <ITEM_ID n:if="$item->getItemId() !== null">{$item->getItemId()}</ITEM_ID>
     <SKU n:if="$item->getSku() !== null">{$item->getSku()}</SKU>
     <NAME n:if="$item->getName() !== null"><![CDATA[{$item->getName()}]]></NAME>
     <NAMEEXT n:if="$item->getNameExt() !== null"><![CDATA[{$item->getNameExt()}]]></NAMEEXT>
