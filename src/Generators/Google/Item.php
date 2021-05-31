@@ -25,6 +25,7 @@ use Mk\Feed\Generators\BaseItem;
  * @property  $productTypes
  * @property  $googleProductCategory
  * @property  $itemGroupId
+ * @property  $features
  * @author Martin Knor <martin.knor@gmail.com>
  * @package Mk\Feed\Generators\Google
  */
@@ -114,6 +115,9 @@ class Item extends BaseItem {
 
     /** @var string */
     protected $currency;
+
+    /** @var array */
+    protected $features;
 
     /**
      * @return string
@@ -518,7 +522,29 @@ class Item extends BaseItem {
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getFeatures() {
+        return $this->features;
+    }
 
+    /**
+     * @param mixed $features
+     * @return Item
+     */
+    public function setFeatures( $features ) {
+        $this->features = $features;
+        return $this;
+    }
+
+
+    public function addFeature( $name, $value ) {
+        $this->features[] = (object)[
+            "name" => $name,
+            "value" => $value,
+        ];
+    }
 
 
 
