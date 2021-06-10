@@ -119,6 +119,9 @@ class Item extends BaseItem {
     /** @var array */
     protected $features;
 
+    /** @var array */
+    protected $parts;
+
     /**
      * @return string
      */
@@ -546,6 +549,25 @@ class Item extends BaseItem {
         ];
     }
 
+    /**
+     * @return array
+     */
+    public function getParts(): array {
+        return (array)$this->parts;
+    }
+
+    /**
+     * @param array $parts
+     * @return Item
+     */
+    public function setParts( array $parts ): Item {
+        $this->parts = $parts;
+        return $this;
+    }
+
+    public function addPart( $part ) {
+        $this->parts[] = $part;
+    }
 
 
 
