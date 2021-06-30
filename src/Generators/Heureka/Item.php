@@ -79,6 +79,12 @@ class Item extends BaseItem {
     /** @var Gift[] */
     protected $gifts = array();
 
+    /** @var string[] */
+    protected $specialServices = array();
+
+    /** @var int */
+    protected $extendedWarranty;
+
     /**
      * @return float
      */
@@ -490,5 +496,40 @@ class Item extends BaseItem {
         return $this;
     }
 
-    
+    /**
+     * @return string[]
+     */
+    public function getSpecialServices(): array {
+        return (array)$this->specialServices;
+    }
+
+    /**
+     * @param string[] $specialServices
+     */
+    public function setSpecialServices( array $specialServices ): void {
+        $this->specialServices = $specialServices;
+    }
+
+
+    public function addService( string $service ) {
+        if (count($this->specialServices) < 5){
+            $this->specialServices[] = $service;
+        }
+    }
+
+    /**
+     * @return int
+     */
+    public function getExtendedWarranty(): ?int {
+        return $this->extendedWarranty;
+    }
+
+    /**
+     * @param int $extendedWarranty
+     */
+    public function setExtendedWarranty( int $extendedWarranty ): void {
+        $this->extendedWarranty = $extendedWarranty;
+    }
+
+
 }

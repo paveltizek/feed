@@ -51,4 +51,10 @@
     {/if}
 
     <CUSTOM_LABEL n:if="$item->getCustomLabel()">{$item->getCustomLabel()}</CUSTOM_LABEL>
+
+    <SPECIAL_SERVICE n:foreach="$item->getSpecialServices() as $service">{$service}</SPECIAL_SERVICE>
+    <EXTENDED_WARRANTY n:if="$item->getExtendedWarranty()">
+        <VAL>{$item->getExtendedWarranty()}</VAL>
+        <DESC>Záruka {$item->getExtendedWarranty()} měsíců</DESC>
+    </EXTENDED_WARRANTY>
 </SHOPITEM>
