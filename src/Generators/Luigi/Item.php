@@ -21,6 +21,7 @@ use Mk\Feed\Generators\BaseItem;
  * @property  $gtin
  * @property  $brand
  * @property  $labels
+ * @property  $productLabels
  * @property  $mpn
  * @property  $productTypes
  * @property  $googleProductCategory
@@ -110,6 +111,8 @@ class Item extends BaseItem {
 
     protected $labels = [];
 
+    protected $productLabels = [];
+
     /** @var string */
     protected $itemGroupId;
 
@@ -127,6 +130,9 @@ class Item extends BaseItem {
 
     /** @var array */
     protected $prices;
+
+    /** @var array */
+    protected $salePrices;
 
     /**
      * @return string
@@ -606,8 +612,42 @@ class Item extends BaseItem {
         $this->prices[$currencyCode] = $price;
     }
 
+    /**
+     * @return array
+     */
+    public function getSalePrices(): array {
+        return (array)$this->salePrices;
+    }
+
+    /**
+     * @param array $salePrices
+     */
+    public function setSalePrices( array $salePrices ): void {
+        $this->salePrices = $salePrices;
+    }
 
 
 
+    public function addSalePrice( string $currencyCode, float $price ) {
+        $this->salePrices[$currencyCode] = $price;
+    }
 
+    /**
+     * @return mixed
+     */
+    public function getProductLabels() {
+        return $this->productLabels;
+    }
+
+    /**
+     * @param mixed $productLabels
+     */
+    public function setProductLabels( $productLabels ): void {
+        $this->productLabels = $productLabels;
+    }
+
+
+    public function addProductLabel( string $label ) {
+        $this->productLabels[] = $label;
+    }
 }
