@@ -34,7 +34,7 @@ class Item extends BaseItem {
     CONST CONDITION_NEW = 'new',
         CONDITION_REFURBISHED = 'refurbished',
         CONDITION_USED = 'used',
-        
+
         AVAILABILITY_PREORDER = 'preorder',
         AVAILABILITY_IN_STOCK = 'in stock',
         AVAILABILITY_OUT_OF_STOCK = 'out of stock';
@@ -83,22 +83,22 @@ class Item extends BaseItem {
 
     /** @var \DateTime|null */
     protected $availabilityDate;
-    
+
     /** @var string @required */
     protected $price;
-    
+
     /** @var string */
     protected $salePrice;
-    
+
     /** @var string */
     protected $salePriceEffectiveDate;
-    
+
     /** @var int */
     protected $gtin;
-    
+
     /** @var string */
     protected $mpn;
-    
+
     /** @var string */
     protected $brand;
 
@@ -106,6 +106,8 @@ class Item extends BaseItem {
     protected $identifierExists;
 
     protected $labels = [];
+
+    protected $ownLabels = [];
 
     /** @var string */
     protected $itemGroupId;
@@ -357,7 +359,7 @@ class Item extends BaseItem {
     {
         return $this->identifierExists;
     }
-    
+
     /**
      * @param boolean $identifierExists
      * @return Item
@@ -458,31 +460,31 @@ class Item extends BaseItem {
         return $this;
     }
 
-	/**
-	 * @return Image[]
-	 */
-	public function getImages()
-	{
-		return $this->images;
-	}
+    /**
+     * @return Image[]
+     */
+    public function getImages()
+    {
+        return $this->images;
+    }
 
-	/**
-	 * @return array
-	 */
-	public function getLabels()
-	{
-		return $this->labels;
-	}
+    /**
+     * @return array
+     */
+    public function getLabels()
+    {
+        return $this->labels;
+    }
 
-	public function addLabel($label)
-	{
-		$this->labels[] = $label;
-	}
+    public function addLabel($label)
+    {
+        $this->labels[] = $label;
+    }
 
-	public function setLabels(array $labels)
-	{
-		$this->labels = $labels;
-	}
+    public function setLabels(array $labels)
+    {
+        $this->labels = $labels;
+    }
 
     /**
      * @return string
@@ -569,7 +571,26 @@ class Item extends BaseItem {
         $this->parts[] = $part;
     }
 
+    /**
+     * @return array
+     */
+    public function getOwnLabels(): array {
+        return $this->ownLabels;
+    }
 
+    /**
+     * @param array $ownLabels
+     */
+    public function setOwnLabels( array $ownLabels ): void {
+        $this->ownLabels = $ownLabels;
+    }
+
+
+
+    public function addOwnLabel($label)
+    {
+        $this->ownLabels[] = $label;
+    }
 
 
 
