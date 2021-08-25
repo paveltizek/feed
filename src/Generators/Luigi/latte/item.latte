@@ -37,6 +37,9 @@
     <g:size>8 Standard</g:size>*}
     <g:mpn>{if $item->getMpn()}{$item->getMpn()}{/if}</g:mpn>
 
+    <g:product_labels n:if="count($item->getProductLabels())" n:inner-foreach="$item->getProductLabels() as $productLabel">
+        <g:label>{$productLabel}</g:label>
+    </g:product_labels>
     {if !empty($productTypes = $item->getProductTypes())}
         <g:product_type n:foreach="$productTypes as $productType" n:if="!empty($productType->getText())">{$productType->getText()}</g:product_type>
     {/if}
@@ -65,5 +68,9 @@
     <g:prices n:if="count($prices = $item->getPrices())">
         <g:price n:foreach="$prices as $curr => $price" currency="{$curr}">{$price}</g:price>
     </g:prices>
+
+    <g:sale_prices n:if="count($salePrices = $item->getSalePrices())">
+        <g:price n:foreach="$salePrices as $curr => $price" currency="{$curr}">{$price}</g:price>
+    </g:sale_prices>
     {*<g:{$name|lower} n:foreach="$item->params as $name => $value" n:if="(!empty($item->params))">{$value}</g:{$name|lower}>*}
 </item>
