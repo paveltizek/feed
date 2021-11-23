@@ -124,6 +124,9 @@ class Item extends BaseItem {
     /** @var array */
     protected $parts;
 
+    /** @var array */
+    protected $shippings;
+
     /**
      * @return string
      */
@@ -592,6 +595,17 @@ class Item extends BaseItem {
         $this->ownLabels[] = $label;
     }
 
+    /**
+     * @return array
+     */
+    public function getShippings(): array {
+        return $this->shippings;
+    }
+
+
+    public function addShippingAttributes(array $values) {
+        $this->shippings[] = $values;
+    }
 
 
 }
