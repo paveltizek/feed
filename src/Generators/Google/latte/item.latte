@@ -56,5 +56,11 @@
     {if !empty($ownLabels = $item->getOwnLabels())}
         <g:own_label n:foreach="$ownLabels as $ownLabel">{$ownLabel}</g:own_label>
     {/if}
+
+    <g:shipping n:foreach="$item->getShippings() as $shipping">
+        {foreach $shipping as $key => $value}
+            <g:{$key}>{$value}</g:{$key}>
+        {/foreach}
+    </g:shipping>
     {*<g:{$name|lower} n:foreach="$item->params as $name => $value" n:if="(!empty($item->params))">{$value}</g:{$name|lower}>*}
 </item>
