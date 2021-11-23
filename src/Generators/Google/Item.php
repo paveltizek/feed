@@ -125,7 +125,7 @@ class Item extends BaseItem {
     protected $parts;
 
     /** @var array */
-    protected $shippings;
+    protected $shippings = [];
 
     /**
      * @return string
