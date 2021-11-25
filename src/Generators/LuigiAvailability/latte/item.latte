@@ -1,7 +1,7 @@
 {contentType xml}
 
 <item id="{$item->getItemId()}">
-    <stock_quantity>{$item->getStock()}</stock_quantity>
+    <stock_quantity>{(int)$item->getStock()}</stock_quantity>
     <delivery_time orderDeadline="{$item->getOrderDeadline()|date:'Y-m-d H:i'}">{$item->getOrderDeliveryTime()|date:'Y-m-d H:i'}</delivery_time>
     <depot n:foreach="$item->getDepots() as $depot" id="{$depot->getId()}">
         <stock_quantity>{$depot->getStock()}</stock_quantity>
