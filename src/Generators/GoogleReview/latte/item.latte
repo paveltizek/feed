@@ -7,15 +7,15 @@
     </reviewer>
     <review_timestamp n:if="$item->getReviewTimestamp()">{$item->getReviewTimestamp()}</review_timestamp>
     <title n:if="$item->getReviewTitle()">{$item->getReviewTitle()}</title>
-    <content>{$item->getReviewContent()}</content>
+    <content n:if="$item->getReviewContent()">{$item->getReviewContent()}</content>
     <pros n:if="count($item->getPros()) > 0">
-        <pro n:foreach="$item->getPros() as $pro">{$pro}</pro>
+        <pro n:foreach="$item->getPros() as $pro" n:if="$pro">{$pro}</pro>
     </pros>
     <cons n:if="count($item->getCons()) > 0">
-        <con n:foreach="$item->getCons() as $cons">{$cons}</con>
+        <con n:foreach="$item->getCons() as $con" n:if="$con">{$con}</con>
     </cons>
     <review_url type="singleton">{$item->getReviewUrl()}</review_url>
-{*    <reviewer_images>*}
+    {*    <reviewer_images>*}
 {*        <reviewer_image>*}
 {*            <url>https://example.com/test.jpg</url>*}
 {*        </reviewer_image>*}
@@ -24,30 +24,30 @@
 {*        </reviewer_image>*}
 {*    </reviewer_images>*}
     <ratings>
-        <overall min="1" max="5">{$item->getRating()}</overall>
+            <overall min="1" max="5">{$item->getRating()}</overall>
     </ratings>
     <products>
-        <product>
-            <product_ids>
-{*                <gtins>*}
+            <product>
+                <product_ids>
+                    {*                <gtins>*}
 {*                    <gtin>541710238425</gtin>*}
 {*                </gtins>*}
 {*                <mpns>*}
 {*                    <mpn>60101-10000</mpn>*}
 {*                </mpns>*}
                 <skus>
-                    <sku>{$item->getSku()}</sku>
+                            <sku>{$item->getSku()}</sku>
                 </skus>
                 <brands n:if="$item->getBrand()">
-                    <brand>{$item->getBrand()}</brand>
+                            <brand>{$item->getBrand()}</brand>
                 </brands>
 {*                <asins>*}
 {*                    <asin>B07YMJ57MB</asin>*}
 {*                </asins>*}
-            </product_ids>
-            <product_name>{$item->getProductName()}</product_name>
-            <product_url>{$item->getProductUrl()}</product_url>
-        </product>
+                </product_ids>
+                <product_name>{$item->getProductName()}</product_name>
+                <product_url>{$item->getProductUrl()}</product_url>
+            </product>
     </products>
     <is_spam>false</is_spam>
     <collection_method>post_fulfillment</collection_method>
