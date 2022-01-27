@@ -37,7 +37,7 @@ class Item extends BaseItem {
 
     private string $sku;
 
-    private string $brand;
+    private ?string $brand;
 
     private string $productName;
 
@@ -220,20 +220,22 @@ class Item extends BaseItem {
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getBrand(): string {
+    public function getBrand(): ?string {
         return $this->brand;
     }
 
     /**
-     * @param string $brand
+     * @param string|null $brand
      * @return Item
      */
-    public function setBrand(string $brand): Item {
+    public function setBrand(?string $brand): Item {
         $this->brand = $brand;
         return $this;
     }
+
+
 
     /**
      * @return string

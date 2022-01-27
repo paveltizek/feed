@@ -38,7 +38,7 @@
                 <skus>
                     <sku>{$item->getSku()}</sku>
                 </skus>
-                <brands>
+                <brands n:if="$item->getBrand()">
                     <brand>{$item->getBrand()}</brand>
                 </brands>
 {*                <asins>*}
