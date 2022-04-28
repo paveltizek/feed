@@ -16,7 +16,7 @@
     <g:availability n:if="$item->getAvailability()">{$item->getAvailability()}</g:availability>
     <g:price>{$item->getPrice()} {$item->getCurrency()}</g:price>
     <g:identifier_exists>{$item->isIdentifierExists() ? 'TRUE' : 'FALSE'}</g:identifier_exists>
-    <g:sale_price n:if="$item->getSalePrice()">{$item->getSalePrice()}</g:sale_price>
+    <g:sale_price n:if="$item->getSalePrice()">{$item->getSalePrice()} {$item->getCurrency()}</g:sale_price>
     <g:sale_price_effective_date n:if="$item->getSalePriceEffectiveDate()">{$item->getSalePriceEffectiveDate()}</g:sale_price_effective_date>
     <g:gtin>{if $item->getGtin()}{$item->getGtin()}{/if}</g:gtin>
     <g:brand n:if="$item->getBrand()">{$item->getBrand()}</g:brand>
