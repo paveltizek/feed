@@ -43,6 +43,8 @@ class Item extends BaseItem {
 
     private string $productUrl;
 
+    private string $gtin;
+
     /**
      * @return string
      */
@@ -277,4 +279,20 @@ class Item extends BaseItem {
     public function addPro($con) {
         $this->pros[] = $pro;
     }
+
+    /**
+     * @return string
+     */
+    public function getGtin(): string {
+        return $this->gtin;
+    }
+
+    /**
+     * @param string $gtin
+     */
+    public function setGtin(string $gtin): void {
+        $this->gtin = $gtin;
+    }
+
+
 }

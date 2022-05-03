@@ -29,10 +29,10 @@
     <products>
             <product>
                 <product_ids>
-                    {*                <gtins>*}
-{*                    <gtin>541710238425</gtin>*}
-{*                </gtins>*}
-{*                <mpns>*}
+                    <gtins n:if="$item->getGtin()">
+                        <gtin>{$item->getGtin()}</gtin>
+                    </gtins>
+                    {*                <mpns>*}
 {*                    <mpn>60101-10000</mpn>*}
 {*                </mpns>*}
                 <skus>
