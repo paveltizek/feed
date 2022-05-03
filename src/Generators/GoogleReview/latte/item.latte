@@ -6,13 +6,13 @@
         <reviewer_id n:if="$item->getReviewerId()">{$item->getReviewerId()}</reviewer_id>
     </reviewer>
     <review_timestamp n:if="$item->getReviewTimestamp()">{$item->getReviewTimestamp()}</review_timestamp>
-    <title n:if="$item->getReviewTitle()">{$item->getReviewTitle()}</title>
+    <title>{$item->getReviewTitle()}</title>
     <content n:if="$item->getReviewContent()">{$item->getReviewContent()}</content>
     <pros n:if="count($item->getPros()) > 0">
-        <pro n:foreach="$item->getPros() as $pro" n:if="$pro">{$pro}</pro>
+        <pro n:foreach="$item->getPros() as $pro" n:if="$pro && trim($pro) !== ''">{$pro}</pro>
     </pros>
     <cons n:if="count($item->getCons()) > 0">
-        <con n:foreach="$item->getCons() as $con" n:if="$con">{$con}</con>
+        <con n:foreach="$item->getCons() as $con" n:if="$con && trim($con) !== ''">{$con}</con>
     </cons>
     <review_url type="singleton">{$item->getReviewUrl()}</review_url>
     {*    <reviewer_images>*}
