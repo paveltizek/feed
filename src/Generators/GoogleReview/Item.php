@@ -43,7 +43,7 @@ class Item extends BaseItem {
 
     private string $productUrl;
 
-    private string $gtin;
+    private ?string $gtin;
 
     /**
      * @return string
@@ -283,14 +283,14 @@ class Item extends BaseItem {
     /**
      * @return string
      */
-    public function getGtin(): string {
+    public function getGtin(): ?string {
         return $this->gtin;
     }
 
     /**
      * @param string $gtin
      */
-    public function setGtin(string $gtin): void {
+    public function setGtin(?string $gtin): void {
         $this->gtin = $gtin;
     }
 
