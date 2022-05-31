@@ -4,8 +4,8 @@
     <SKU n:if="$item->getSku() !== null">{$item->getSku()}</SKU>
     <NAME n:if="$item->getName() !== null"><![CDATA[{$item->getName()}]]></NAME>
     <NAMEEXT n:if="$item->getNameExt() !== null"><![CDATA[{$item->getNameExt()}]]></NAMEEXT>
-    <DESCRIPTION n:if="$item->getDescription() !== null"><![CDATA[{$item->getDescription()|striptags|noescape}]]></DESCRIPTION>
-    <DESCRIPTION_SHORT n:if="$item->getDescriptionShort() !== null"><![CDATA[{$item->getDescriptionShort()|striptags|noescape}]]></DESCRIPTION_SHORT>
+    <DESCRIPTION n:if="$item->getDescription() !== null"><![CDATA[{$item->getDescription()}]]></DESCRIPTION>
+    <DESCRIPTION_SHORT n:if="$item->getDescriptionShort() !== null"><![CDATA[{$item->getDescriptionShort()}]]></DESCRIPTION_SHORT>
     <TITLE n:if="$item->getTitle() !== null"><![CDATA[{$item->getTitle()|striptags|noescape}]]></TITLE>
     <META_DESCRIPTION n:if="$item->getMetaDescription() !== null"><![CDATA[{$item->getMetaDescription()|striptags|noescape}]]></META_DESCRIPTION>
     <META_KEYWORDS n:if="$item->getMetaKeywords() !== null"><![CDATA[{$item->getMetaKeywords()|striptags|noescape}]]></META_KEYWORDS>
