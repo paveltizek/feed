@@ -3,6 +3,7 @@
 
 namespace Mk\Feed\DI;
 
+use Mk\Feed\Storage;
 use Nette;
 
 /**
@@ -25,7 +26,8 @@ class FeedExtension extends Nette\DI\CompilerExtension {
         $config = $this->getConfig($this->defaults);
 
         $builder->addDefinition($this->prefix('storage'))
-            ->setClass('\Mk\Feed\Storage', array($config['exportsDir']));
+            ->setClass(Storage::class)
+            ->setArguments(array($config['exportsDir']));
 
         foreach ($config['exports'] as $export => $class) {
             if (!class_exists($class)) {
@@ -37,7 +39,8 @@ class FeedExtension extends Nette\DI\CompilerExtension {
 
         if (class_exists('\Symfony\Component\Console\Command\Command')) {
             $builder->addDefinition($this->prefix('command'))
-                ->setClass('Mk\Feed\Command\FeedCommand', array($config))
+                ->setClass('Mk\Feed\Command\FeedCommand')
+                ->setArguments(array($config))
                 ->addTag('kdyby.console.command');
         }
     }
