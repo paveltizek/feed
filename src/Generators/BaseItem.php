@@ -20,7 +20,7 @@ abstract class BaseItem implements Mk\Feed\Generators\IItem
 	 * @return bool return true if item is valid
      */
 	public function validate() {
-
+        return true;
 		$reflection = new Nette\Reflection\ClassType(get_called_class());
 
 		foreach ($reflection->getProperties(\ReflectionProperty::IS_PUBLIC) as $v) {
