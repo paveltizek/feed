@@ -102,9 +102,12 @@ class Item extends BaseItem {
     
     /** @var string */
     protected $mpn;
-    
+
     /** @var string */
     protected $brand;
+
+    /** @var int */
+    protected $availabilityRank;
 
     /** @var bool */
     protected $identifierExists;
@@ -650,4 +653,14 @@ class Item extends BaseItem {
     public function addProductLabel( string $label ) {
         $this->productLabels[] = $label;
     }
+
+    public function getAvailabilityRank(): int {
+        return $this->availabilityRank;
+    }
+
+    public function setAvailabilityRank(int $availabilityRank): void {
+        $this->availabilityRank = $availabilityRank;
+    }
+
+
 }
