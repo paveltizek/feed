@@ -18,7 +18,7 @@ class FeedCommand extends Command {
 	/** @var array */
 	private $config;
 
-	public function __construct(array $config = array(), Nette\DI\Container $container)
+	public function __construct(array $config, Nette\DI\Container $container)
 	{
 		parent::__construct();
 
