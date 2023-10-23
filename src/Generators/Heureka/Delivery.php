@@ -75,6 +75,7 @@ class Delivery{
         self::BALIKOVNA_DEPOTAPI,
 
         self::SLOVENSKA_POSTA,
+        self::GLS_PARCELSHOP,
     );
 
     /** @var string */
