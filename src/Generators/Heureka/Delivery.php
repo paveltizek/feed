@@ -42,7 +42,7 @@ class Delivery{
         ZASILKOVNA = 'ZASILKOVNA',
         BALIKOVNA_DEPOTAPI = 'BALIKOVNA_DEPOTAPI',
 
-        SLOVENSKA_POSTA = 'SLOVENSKA_POSTA';
+        GLS_PARCELSHOP = 'GLS_PARCELSHOP';
 
 
     static $ids = array(
