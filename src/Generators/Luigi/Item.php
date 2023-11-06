@@ -109,6 +109,9 @@ class Item extends BaseItem {
     /** @var int */
     protected $availabilityRank;
 
+    /** @var int */
+    protected $minQty;
+
     /** @var bool */
     protected $identifierExists;
 
@@ -661,6 +664,15 @@ class Item extends BaseItem {
     public function setAvailabilityRank(int $availabilityRank): void {
         $this->availabilityRank = $availabilityRank;
     }
+
+    public function getMinQty(): ?int {
+        return $this->minQty;
+    }
+
+    public function setMinQty(?int $minQty): void {
+        $this->minQty = $minQty;
+    }
+
 
 
 }
