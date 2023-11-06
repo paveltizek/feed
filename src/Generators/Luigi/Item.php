@@ -657,11 +657,11 @@ class Item extends BaseItem {
         $this->productLabels[] = $label;
     }
 
-    public function getAvailabilityRank(): int {
+    public function getAvailabilityRank(): ?int {
         return $this->availabilityRank;
     }
 
-    public function setAvailabilityRank(int $availabilityRank): void {
+    public function setAvailabilityRank(?int $availabilityRank): void {
         $this->availabilityRank = $availabilityRank;
     }
 
