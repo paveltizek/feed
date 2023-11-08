@@ -88,6 +88,14 @@ class Item extends BaseItem {
     /** @var \DateTime */
     protected $orderDeliveryTime;
 
+
+
+    /** @var bool|null */
+    protected $status;
+
+    /** @var bool|null */
+    protected $inSale;
+
     /**
      * @return float
      */
@@ -543,6 +551,39 @@ class Item extends BaseItem {
     public function getDepots(): array {
         return $this->depots;
     }
+
+    /**
+     * @return bool|null
+     */
+    public function getStatus(): ?bool {
+        return $this->status;
+    }
+
+    /**
+     * @param bool|null $status
+     * @return Item
+     */
+    public function setStatus(?bool $status): Item {
+        $this->status = $status;
+        return $this;
+    }
+
+    /**
+     * @return bool|null
+     */
+    public function getInSale(): ?bool {
+        return $this->inSale;
+    }
+
+    /**
+     * @param bool|null $inSale
+     * @return Item
+     */
+    public function setInSale(?bool $inSale): Item {
+        $this->inSale = $inSale;
+        return $this;
+    }
+
 
 
 

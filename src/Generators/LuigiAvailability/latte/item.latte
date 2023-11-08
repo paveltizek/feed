@@ -7,5 +7,7 @@
         <stock_quantity>{$depot->getStock()}</stock_quantity>
         <pickup_time orderDeadline="{$depot->getOrderDeadline()|date:'Y-m-d H:i'}">{$depot->getOrderDeliveryTime()|date:'Y-m-d H:i'}</pickup_time>
     </depot>
+    <status n:if="$item->getStatus()">{$item->getStatus()}</status>
+    <in_sale n:if="$item->getInSale()">{(int)$item->getInSale()}</in_sale>
 
 </item>
