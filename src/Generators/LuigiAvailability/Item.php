@@ -27,9 +27,16 @@ class Item extends BaseItem {
 
     /**  @var string @required */
     protected $url;
+    /**
+     * @var Language[]
+     */
+    private  $languages;
 
     /** @var Image[] */
     protected $images = array();
+
+    /** @var array */
+    protected $availabilities = array();
 
     /** @var Depot[] */
     protected $depots = [];
@@ -88,13 +95,15 @@ class Item extends BaseItem {
     /** @var \DateTime */
     protected $orderDeliveryTime;
 
-
+    /** @var string|null */
+    protected $availability;
 
     /** @var bool|null */
     protected $status;
 
     /** @var bool|null */
     protected $inSale;
+
 
     /**
      * @return float
@@ -553,6 +562,33 @@ class Item extends BaseItem {
     }
 
     /**
+     * @return array
+     */
+    public function getAvailabilities(): array {
+        return $this->availabilities;
+    }
+
+    public function addAvailability(string $lang, string $availability) {
+        $this->availabilities[$lang] = $availability;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getAvailability(): ?string {
+        return $this->availability;
+    }
+
+    /**
+     * @param string|null $availability
+     * @return Item
+     */
+    public function setAvailability(?string $availability): Item {
+        $this->availability = $availability;
+        return $this;
+    }
+
+    /**
      * @return bool|null
      */
     public function getStatus(): ?bool {
@@ -583,9 +619,6 @@ class Item extends BaseItem {
         $this->inSale = $inSale;
         return $this;
     }
-
-
-
 
 
 
