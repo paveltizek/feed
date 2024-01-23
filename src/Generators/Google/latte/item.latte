@@ -1,7 +1,7 @@
 {contentType xml}
 <item>
     <g:id>{$item->getId()}</g:id>
-    <title><![CDATA[{$item->getTitle()}]]></title>
+    <title><![CDATA[{$item->getTitle()|noescape}]]></title>
     <description><![CDATA[{$item->getDescription()|striptags|noescape}]]></description>
     <link><![CDATA[{$item->getLink()}]]></link>
 
