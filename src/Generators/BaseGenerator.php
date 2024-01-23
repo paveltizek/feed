@@ -147,7 +147,7 @@ abstract class BaseGenerator implements IGenerator {
         $latte = new Engine;
         $content = $latte->renderToString($this->getTemplate($template), array('storeName' => $this->storeName, 'description' => $this->description, 'link' => $this->link));
         $file = $this->getTemplate($template);
-        $footerHandle = fopen('safe://' . $file, 'r');
+        $footerHandle = fopen('nette.safe://' . $file, 'r');
         $footer = fread($footerHandle, filesize($file));
         fclose($footerHandle);
         fwrite($this->handle, $content);
