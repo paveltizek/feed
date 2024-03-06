@@ -38,6 +38,7 @@
     <g:size>8 Standard</g:size>*}
     <g:mpn>{if $item->getMpn()}{$item->getMpn()}{/if}</g:mpn>
     <g:mpn>{if $item->getMinQty() !== null}{$item->getMinQty()}{/if}</g:mpn>
+    <g:min_qty>{if $item->getMinQty() !== null}{$item->getMinQty()}{/if}</g:min_qty>
 
     <g:product_labels n:if="count($item->getProductLabels())" n:inner-foreach="$item->getProductLabels() as $productLabel">
         <g:label>{$productLabel}</g:label>
