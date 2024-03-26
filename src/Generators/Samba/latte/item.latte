@@ -1,5 +1,5 @@
 {contentType xml}
-<SHOPITEM>
+<PRODUCT>
     <PRODUCT_ID n:if="$item->getItemId()">{$item->getItemId()}</PRODUCT_ID>
     <TITLE><![CDATA[{$item->getProductName()|noescape}]]></TITLE>
     <DESCRIPTION><![CDATA[{$item->getDescription()|striptags|noescape}]]></DESCRIPTION>
@@ -61,4 +61,4 @@
         <VAL>{$item->getExtendedWarranty()}</VAL>
         <DESC>Záruka {$item->getExtendedWarranty()} měsíců</DESC>
     </EXTENDED_WARRANTY>
-</SHOPITEM>
+</PRODUCT>
