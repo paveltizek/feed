@@ -27,6 +27,7 @@
     {/if}
 
     <STOCK n:if="$item->getStock() !== null">{$item->getStock()}</STOCK>
+    <PRICE_BEFORE_DISCOUNT n:if="$item->getPriceBeforeDiscount() !== null && $item->getPriceBeforeDiscount() > $item->getPriceVat()">{$item->getPriceBeforeDiscount()}</PRICE_BEFORE_DISCOUNT>
     <PRICE_BUY n:if="$item->getCost()">{$item->getCost()}</PRICE_BUY>
 
     <CATEGORYTEXT n:if="$item->getCategoryText()"><![CDATA[{$item->getCategoryText()}]]></CATEGORYTEXT>

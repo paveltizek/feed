@@ -91,6 +91,8 @@ class Item extends BaseItem {
     /** @var float */
     protected $cost;
 
+    protected $priceBeforeDiscount;
+
     /**
      * @return float
      */
@@ -551,6 +553,20 @@ class Item extends BaseItem {
 
     public function setCost(float $cost): void {
         $this->cost = $cost;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPriceBeforeDiscount() {
+        return $this->priceBeforeDiscount;
+    }
+
+    /**
+     * @param mixed $priceBeforeDiscount
+     */
+    public function setPriceBeforeDiscount($priceBeforeDiscount): void {
+        $this->priceBeforeDiscount = $priceBeforeDiscount;
     }
 
 
