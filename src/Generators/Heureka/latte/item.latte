@@ -57,4 +57,9 @@
         <VAL>{$item->getExtendedWarranty()}</VAL>
         <DESC>Záruka {$item->getExtendedWarranty()} měsíců</DESC>
     </EXTENDED_WARRANTY>
+
+    <SALES_VOUCHER n:if="$item->getVoucherCode() && $item->getVoucherDesc()">
+        <CODE n:if="$item->getVoucherCode()">{$item->getVoucherCode()}</CODE>
+        <DESC n:if="$item->getVoucherDesc()"><![CDATA[{$item->getVoucherDesc()}]]></DESC>
+    </SALES_VOUCHER>
 </SHOPITEM>

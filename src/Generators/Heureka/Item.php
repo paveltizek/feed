@@ -85,6 +85,9 @@ class Item extends BaseItem {
     /** @var int */
     protected $extendedWarranty;
 
+    protected ?string $voucherCode = null;
+    protected ?string $voucherDesc = null;
+
     /**
      * @return float
      */
@@ -529,6 +532,22 @@ class Item extends BaseItem {
      */
     public function setExtendedWarranty( int $extendedWarranty ): void {
         $this->extendedWarranty = $extendedWarranty;
+    }
+
+    public function getVoucherCode(): ?string {
+        return $this->voucherCode;
+    }
+
+    public function setVoucherCode(?string $voucherCode): void {
+        $this->voucherCode = $voucherCode;
+    }
+
+    public function getVoucherDesc(): ?string {
+        return $this->voucherDesc;
+    }
+
+    public function setVoucherDesc(?string $voucherDesc): void {
+        $this->voucherDesc = $voucherDesc;
     }
 
 
