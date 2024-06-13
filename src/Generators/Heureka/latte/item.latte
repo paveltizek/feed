@@ -60,6 +60,6 @@
 
     <SALES_VOUCHER n:if="$item->getVoucherCode() && $item->getVoucherDesc()">
         <CODE n:if="$item->getVoucherCode()">{$item->getVoucherCode()}</CODE>
-        <DESC n:if="$item->getVoucherDesc()"><![CDATA[{$item->getVoucherDesc()}]]></DESC>
+        <DESC n:if="$item->getVoucherDesc()"><![CDATA[{$item->getVoucherDesc()|truncate:128}]]></DESC>
     </SALES_VOUCHER>
 </SHOPITEM>
