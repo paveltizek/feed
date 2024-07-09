@@ -43,8 +43,8 @@
     <VISIBILITY n:if="!$item->isVisibility()">{$item->isVisibility() ? 1 : 0}</VISIBILITY>
     <CUSTOM_LABEL_0 n:if="$item->getCustomLabel()">{$item->getCustomLabel()}</CUSTOM_LABEL_0>
     <CUSTOM_LABEL_1 n:if="$item->getCustomLabel()">{$item->getCustomLabel()}</CUSTOM_LABEL_1>
-    <MAX_CPC n:if="isset($item->maxCpc) && $item->getMaxCpc()>0">{$item->getMaxCpc()}</MAX_CPC>
-    <MAX_CPC_SEARCH n:if="isset($item->maxCpcSearch) && $item->getMaxCpcSearch()>0">{$item->getMaxCpcSearch()}</MAX_CPC_SEARCH>
+    <MAX_CPC n:if="$item->getMaxCpc()>0">{$item->getMaxCpc()}</MAX_CPC>
+    <MAX_CPC_SEARCH n:if="$item->getMaxCpcSearch()>0">{$item->getMaxCpcSearch()}</MAX_CPC_SEARCH>
 
     {if !empty($parameters = $item->getParameters())}
         <PARAM n:foreach="$parameters as $parameter">
