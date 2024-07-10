@@ -43,6 +43,7 @@ class Delivery{
         BALIKOVNA_DEPOTAPI = 'BALIKOVNA_DEPOTAPI',
         SLOVENSKA_POSTA = 'SLOVENSKA_POSTA',
         GLS_PARCELSHOP = 'GLS_PARCELSHOP',
+        ZASILKOVNA_NA_ADRESU = 'ZASILKOVNA_NA_ADRESU',
         PPL_PARCELSHOP = 'PPL_PARCELSHOP';
 
 
@@ -75,6 +76,7 @@ class Delivery{
         self::ZASILKOVNA,
         self::BALIKOVNA_DEPOTAPI,
         self::PPL_PARCELSHOP,
+        self::ZASILKOVNA_NA_ADRESU,
 
         self::SLOVENSKA_POSTA,
         self::GLS_PARCELSHOP,
