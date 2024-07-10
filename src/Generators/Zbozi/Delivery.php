@@ -15,6 +15,7 @@ class Delivery{
     use \Nette\SmartObject;
 
     CONST CESKA_POSTA = 'CESKA_POSTA',
+        CESKA_POSTA_BALIKOVNA = 'CESKA_POSTA_BALIKOVNA',
         CESKA_POSTA_NA_POSTU = 'CESKA_POSTA_NA_POSTU',
         CSAD_LOGISTIK_OSTRAVA = 'CSAD_LOGISTIK_OSTRAVA',
         SLOVENSKA_POSTA = 'SLOVENSKA_POSTA',
@@ -44,6 +45,7 @@ class Delivery{
     static $ids = array(
         self::CESKA_POSTA,
         self::CESKA_POSTA_NA_POSTU,
+        self::CESKA_POSTA_BALIKOVNA,
         self::CSAD_LOGISTIK_OSTRAVA,
         self::DPD,
         self::DHL,
