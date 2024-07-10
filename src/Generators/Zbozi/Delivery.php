@@ -40,7 +40,8 @@ class Delivery{
         UPS = 'UPS',
         ULOZENKA = 'ULOZENKA',
         VLASTNI_PREPRAVA = 'VLASTNI_PREPRAVA',
-        ZASILKOVNA = 'ZASILKOVNA';
+        ZASILKOVNA = 'ZASILKOVNA',
+        ZASILKOVNA_NA_ADRESU = 'ZASILKOVNA_NA_ADRESU';
 
 
     static $ids = array(
@@ -71,6 +72,7 @@ class Delivery{
         self::VLASTNI_PREPRAVA,
         self::ZASILKOVNA,
         self::SLOVENSKA_POSTA,
+        self::ZASILKOVNA_NA_ADRESU,
     );
 
     /** @var string */
