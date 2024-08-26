@@ -489,6 +489,10 @@ class Item extends BaseItem {
         $this->labels = $labels;
     }
 
+    public function setLabel(int $key, string $label) {
+        $this->labels[$key] = $label;
+    }
+
     /**
      * @return string
      */
