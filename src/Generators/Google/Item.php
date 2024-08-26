@@ -493,6 +493,10 @@ class Item extends BaseItem {
         $this->labels[$key] = $label;
     }
 
+    public function getLabel(int $key) {
+        return $this->labels[$key];
+    }
+
     /**
      * @return string
      */
