@@ -14,6 +14,7 @@
 
     <g:condition n:if="$item->getCondition()">{$item->getCondition()}</g:condition>
     <g:availability n:if="$item->getAvailability()">{$item->getAvailability()}</g:availability>
+    <g:availability_date n:if="$item->getAvailabilityDate()">{$item->getAvailabilityDate()}</g:availability_date>
     <g:price>{$item->getPrice()} {$item->getCurrency()}</g:price>
     <g:identifier_exists>{$item->isIdentifierExists() ? 'TRUE' : 'FALSE'}</g:identifier_exists>
     <g:sale_price n:if="$item->getSalePrice()">{$item->getSalePrice()} {$item->getCurrency()}</g:sale_price>
