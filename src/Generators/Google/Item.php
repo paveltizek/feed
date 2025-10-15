@@ -37,6 +37,7 @@ class Item extends BaseItem {
 
         AVAILABILITY_PREORDER = 'preorder',
         AVAILABILITY_IN_STOCK = 'in stock',
+        AVAILABILITY_BACKORDER = 'backorder',
         AVAILABILITY_OUT_OF_STOCK = 'out of stock';
 
     static $conditions = array(
@@ -47,6 +48,7 @@ class Item extends BaseItem {
 
     static $availabilities = array(
         self::AVAILABILITY_PREORDER,
+        self::AVAILABILITY_BACKORDER,
         self::AVAILABILITY_IN_STOCK,
         self::AVAILABILITY_OUT_OF_STOCK,
     );
