@@ -41,7 +41,7 @@ abstract class BaseItem implements Mk\Feed\Generators\IItem
 	}
 
     public function addCustomProperty(string $name, string $value):void {
-        $this->customProperties[$name] = $value;
+        $this->customProperties[$name] = new CustomProperty($name, $value);
     }
 
 

@@ -7,9 +7,17 @@ class CustomProperty
 {
 
     private string $name;
-    private string $value
+    private string $value;
 
-    ;
+    /**
+     * @param string $name
+     * @param string $value
+     */
+    public function __construct(string $name, string $value) {
+        $this->name = $name;
+        $this->value = $value;
+    }
+
 
     public function getName(): string {
         return $this->name;
