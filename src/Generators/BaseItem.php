@@ -15,11 +15,8 @@ abstract class BaseItem implements Mk\Feed\Generators\IItem
 
 	/* Použití smartobject viz php 7.2 to nette 2.4 */
 	use \Nette\SmartObject;
+    use TCustomProperties;
 
-
-
-    /** @var CustomProperty[]  */
-    private array $customProperties = [];
 
 	/**
 	 * Validate item
@@ -40,13 +37,5 @@ abstract class BaseItem implements Mk\Feed\Generators\IItem
 		return TRUE;
 	}
 
-    public function addCustomProperty(string $name, string $value):void {
-        $this->customProperties[$name] = new CustomProperty($name, $value);
-    }
-
-
-    public function getCustomProperties():array {
-        return $this->customProperties;
-    }
 
 }
