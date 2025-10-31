@@ -62,4 +62,10 @@
         <CODE n:if="$item->getVoucherCode()">{$item->getVoucherCode()}</CODE>
         <DESC n:if="$item->getVoucherDesc()"><![CDATA[{$item->getVoucherDesc()|truncate:128}]]></DESC>
     </SALES_VOUCHER>
+
+      {foreach $item->getCustomProperties() as $cp}
+        <{$cp->getName()}>
+            {$cp->getValue()}
+        </{$cp->getName()}>
+    {/foreach}
 </SHOPITEM>

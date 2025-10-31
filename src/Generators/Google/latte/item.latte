@@ -64,5 +64,11 @@
             <g:{$key}>{$value}</g:{$key}>
         {/foreach}
     </g:shipping>
+
+    {foreach $item->getCustomProperties() as $cp}
+        <g:{$cp->getName()}>
+            {$cp->getValue()}
+        </g:{$cp->getName()}>
+    {/foreach}
     {*<g:{$name|lower} n:foreach="$item->params as $name => $value" n:if="(!empty($item->params))">{$value}</g:{$name|lower}>*}
 </item>

@@ -17,17 +17,25 @@
         <IMGURL n:foreach="$images as $image">{$image->getUrl()}</IMGURL>
     {/if}
 
+
     <EAN n:if="$item->getEan()">{$item->getEan()}</EAN>
+
     <ISBN n:if="$item->getIsbn()">{$item->getIsbn()}</ISBN>
+
     <PRODUCTNO n:if="$item->getProductNo()">{$item->getProductNo()}</PRODUCTNO>
+
     <ITEMGROUP_ID n:if="$item->getItemGroupId()">{$item->getItemGroupId()}</ITEMGROUP_ID>
+
     <MANUFACTURER n:if="$item->getManufacturer()">{$item->getManufacturer()}</MANUFACTURER>
+
     <BRAND n:if="$item->getBrand()">{$item->getBrand()}</BRAND>
+
     <CATEGORY_ID n:if="$item->getCategoryId()">{$item->getCategoryId()}</CATEGORY_ID>
 
     {if !empty($categoryTexts = $item->getCategoryTexts())}
         <CATEGORYTEXT n:foreach="$categoryTexts as $categoryText" n:if="!empty($categoryText->getText())">{$categoryText->getText()}</CATEGORYTEXT>
     {/if}
+
 
     <PRODUCT n:if="$item->getProduct()">{$item->getProduct()}</PRODUCT>
     {*<ITEM_TYPE n:if="$item->type">{$item->type}</ITEM_TYPE>*}
@@ -40,11 +48,16 @@
         <SHOP_DEPOTS n:foreach="$shopDepots as $shopDepot">{$shopDepot->getId()}</SHOP_DEPOTS>
     {/if}
 
+
     <VISIBILITY n:if="!$item->isVisibility()">{$item->isVisibility() ? 1 : 0}</VISIBILITY>
+
     <CUSTOM_LABEL_0 n:if="$item->getCustomLabel()">{$item->getCustomLabel()}</CUSTOM_LABEL_0>
+
     <CUSTOM_LABEL_1 n:if="$item->getCustomLabel()">{$item->getCustomLabel()}</CUSTOM_LABEL_1>
-    <MAX_CPC n:if="$item->getMaxCpc()>0">{$item->getMaxCpc()}</MAX_CPC>
-    <MAX_CPC_SEARCH n:if="$item->getMaxCpcSearch()>0">{$item->getMaxCpcSearch()}</MAX_CPC_SEARCH>
+
+    <MAX_CPC n:if="$item->getMaxCpc() > 0">{$item->getMaxCpc()}</MAX_CPC>
+
+    <MAX_CPC_SEARCH n:if="$item->getMaxCpcSearch() > 0">{$item->getMaxCpcSearch()}</MAX_CPC_SEARCH>
 
     {if !empty($parameters = $item->getParameters())}
         <PARAM n:foreach="$parameters as $parameter">
@@ -54,7 +67,16 @@
         </PARAM>
     {/if}
 
+
     <PRODUCT_LINE n:if="$item->getProductLine()">{$item->getProductLine()}</PRODUCT_LINE>
+
     <LIST_PRICE n:if="$item->getListPrice()">{$item->getListPrice()}</LIST_PRICE>
+
     <RELEASE_DATE n:if="$item->getReleaseDate()">{$item->getReleaseDate()|date:'c'}</RELEASE_DATE>
+
+    {foreach $item->getCustomProperties() as $cp}
+        <{$cp->getName()}>
+            {$cp->getValue()}
+        </{$cp->getName()}>
+    {/foreach}
 </SHOPITEM>
