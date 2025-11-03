@@ -19,7 +19,7 @@
     {if !empty($parameters = $item->getParameters())}
         <PARAM n:foreach="$parameters as $parameter">
             <PARAM_NAME>{$parameter->getName()}</PARAM_NAME>
-            <VAL>{$parameter->getValue()}{$parameter->getUnit()}</VAL>
+            <VAL>{$parameter->getValue()} {$parameter->getUnit()}</VAL>
             <PERCENTAGE n:if="$parameter->getPercentage()">{$parameter->getPercentage()}%</PERCENTAGE>
         </PARAM>
     {/if}
