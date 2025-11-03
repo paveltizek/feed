@@ -166,7 +166,8 @@ class Item extends BaseItem {
      */
     public function addParameter($name, $val, $unit = null, $percentage = null)
     {
-        $this->parameters[] = new Parameter($name, $val, $unit, $percentage);
+        $parameterKey = $name . '_' . $val;
+        $this->parameters[$parameterKey] = new Parameter($name, $val, $unit, $percentage);
 
         return $this;
     }
